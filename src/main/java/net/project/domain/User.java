@@ -11,7 +11,7 @@ public class User {
 	@GeneratedValue  // database에서 자동으로  1씩 증가
 	private Long id;
 	
-	@Column(nullable=false, length=20)
+	@Column(nullable=false, length=20, unique=true)
 	private String userID;
 	@Column(nullable=false)
 	private String email;
@@ -23,6 +23,14 @@ public class User {
 	public Long getId() {
 		return id;
 	}
+	public boolean matchId(Long newId) { //getId()대신.
+		if (newId == null) {
+			return false;
+		}
+		
+		return newId.equals(id); 
+	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -38,6 +46,13 @@ public class User {
 	}
 	public String getPassword() {
 		return password;
+	}
+	public boolean matchPassword(String newPassword) {//getPassword()대신.
+		if (newPassword == null) {
+			return false;
+		}
+		
+		return newPassword.equals(password); 
 	}
 	
 	public void setEmail(String email) {
