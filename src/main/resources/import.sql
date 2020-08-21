@@ -1,0 +1,1 @@
+INSERT INTO USER (USERID, PASSWORD, NAME, EMAIL) VALUES ('kksj216', '1234', 'SujinKwon', '21900044@handong.edu');
