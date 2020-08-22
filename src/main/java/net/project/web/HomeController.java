@@ -12,7 +12,7 @@ public class HomeController {
 	@Autowired
 	private QuestionRepository questionRepository;
 
-	@GetMapping("/home")
+	@GetMapping("") // /home
 	public String index(Model model) {
 		model.addAttribute("questions", questionRepository.findAll());
 		
