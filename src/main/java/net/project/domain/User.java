@@ -5,19 +5,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity // data base와 mapping하는 것. 
 public class User {
 	@Id   // 각각의 data를 식별하기 위해 primary key
 	@GeneratedValue  // database에서 자동으로  1씩 증가
+	@JsonProperty
 	private Long id;
 	
 	@Column(nullable=false, length=20, unique=true)
+	@JsonProperty
 	private String userID;
+	
 	@Column(nullable=false)
+	@JsonProperty
 	private String email;
+	
 	@Column(nullable=false)
+	@JsonProperty
 	private String name;
+	
 	@Column(nullable=false)
+	@JsonIgnore
 	private String password;
 	
 	public Long getId() {

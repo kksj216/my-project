@@ -92,7 +92,7 @@
                           </article>
                           {{/answers}}
                         
-                          <form class="submit-write" method="post" action="/questions/{{id}}/answers">
+                          <form class="answer-write" method="post" action="/api/questions/{{id}}/answers">
                               <div class="form-group" style="padding:14px;">
                                   <textarea class="form-control" placeholder="Update your status" name="contents"></textarea>
                               </div>
@@ -139,8 +139,6 @@
 </script>
 
 <!-- script references -->
-<script src="../js/jquery-2.2.0.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/scripts.js"></script>
+{{> /include/footer}}
 	</body>
 </html>
