@@ -9,12 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity // data base와 mapping하는 것. 
-public class User {
-	@Id   // 각각의 data를 식별하기 위해 primary key
-	@GeneratedValue  // database에서 자동으로  1씩 증가
-	@JsonProperty
-	private Long id;
-	
+public class User extends AbstractEntity {
 	@Column(nullable=false, length=20, unique=true)
 	@JsonProperty
 	private String userID;
@@ -31,20 +26,20 @@ public class User {
 	@JsonIgnore
 	private String password;
 	
-	public Long getId() {
-		return id;
-	}
 	public boolean matchId(Long newId) { //getId()대신.
 		if (newId == null) {
 			return false;
 		}
 		
-		return newId.equals(id); 
+		return newId.equals(getId()); 
 	}
 	
+/*	public Long getId() {
+		return id;
+	}	
 	public void setId(Long id) {
 		this.id = id;
-	}
+	}*/
 	
 	public String getEmail() {
 		return email;
@@ -89,30 +84,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [email=" + email + ", userID=" + userID + ", name=" + name + ", password=" + password + "]";
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+		return "User [" + super.toString() + "email=" + email + ", userID=" + userID + ", name=" + name + ", password=" + password + "]";
 	}
 	
 	
