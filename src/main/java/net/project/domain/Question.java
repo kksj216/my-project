@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -21,6 +22,7 @@ public class Question extends AbstractEntity {
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_question_writer"))
 	@JsonProperty
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private User writer;
 	
 	@JsonProperty

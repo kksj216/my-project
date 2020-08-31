@@ -70,7 +70,8 @@ public class UserController {
 		
 		//users.add(user);
 		userRepository.save(user);
-		return "redirect:/users";
+//		return "redirect:/users";
+		return "/index";
 	}
 	
 	@GetMapping("")
@@ -111,7 +112,9 @@ public class UserController {
 		User user = userRepository.findById(id).get();
 		user.update(updatedUser); 
 		userRepository.save(user);
-		return "redirect:/users";
+//		return "redirect:/users";
+		return "/index";
+		
 	}
 	
 }
