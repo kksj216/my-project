@@ -15,9 +15,54 @@
 	<body>
 {{> /include/navigation}}
 
+<style>
+.info {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 80px;
+  width: inherit;
+  
+}
+.note {
+  font-size: 120%;
+  color: black;
+}
+.button {
+  color: blue;
+  
+}
+</style>
+
+
 <div class="container" id="main">
    <div class="col-md-12 col-sm-12 col-lg-10 col-lg-offset-1">
+   
+   		
+   
       <div class="panel panel-default qna-list">
+      
+      	<div class=info>
+			<div>
+				{{^sessionedUser}}
+					<h2> <span class="note"> 로그인을 해주세요 :) </span>  </h2>
+				{{/sessionedUser}}	
+				{{#sessionedUser}}
+					<div>
+						<img src="https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png" class="article-author-thumb" alt="">
+					</div> 
+					<div>
+						<h3> <span class="note"> 안녕하세요 {{name}}님, 오늘도 좋은하루 되세요! ^0^ </span>  </h3>
+					</div>
+					<div class="col-md-3 qna-write">
+                  		<a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디만들기</a>
+              		</div>
+				{{/sessionedUser}}	
+				
+			</div>
+		</div>
+      
           <ul class="list">
           	  {{#questions}}
               <li>
