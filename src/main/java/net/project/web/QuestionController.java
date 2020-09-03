@@ -30,6 +30,7 @@ public class QuestionController {
 			return "/users/loginForm";
 		}
 		return "/qna/form";
+	
 	}
 	
 	@PostMapping("")

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>GHOST </title>
+		<title>Handong Study Group </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
@@ -17,11 +17,11 @@
 
 <style>
 .info {
-  background-color: tomato;
+  background-color: white;
   color: white;
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
   margin: 5px;
-  padding: 80px;
+  padding: 20px;
   width: inherit;
   
 }
@@ -43,24 +43,35 @@
       <div class="panel panel-default qna-list">
       
       	<div class=info>
-			<div>
+			<div style="align:middle;">
+				<style>
+					img {display:block; margin:0px auto; } 
+				</style>
+				<img src="https://postfiles.pstatic.net/MjAyMDA5MDNfMjE1/MDAxNTk5MTM1NzIwMjUw.CYUbUfhBR4zfqrKMXNNIiHZIl6suZC-5GZB1ddE7joAg.5ytjOUyn0cfHC6mK9gJPMRpJ1X3RVsmU8cUyZKzza3Ag.PNG.kksj0216/5.png?type=w773" alt="handong study" float=auto, height="255px", width="580px">
 				{{^sessionedUser}}
-					<h2> <span class="note"> 로그인을 해주세요 :) </span>  </h2>
+					<h2> <span class="note" style="font-family:Courier New;"> Please login :) </span>  </h2>
 				{{/sessionedUser}}	
 				{{#sessionedUser}}
-					<div>
+				  
+				<!-- <div>
 						<img src="https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png" class="article-author-thumb" alt="">
-					</div> 
-					<div>
-						<h3> <span class="note"> 안녕하세요 {{name}}님, 오늘도 좋은하루 되세요! ^0^ </span>  </h3>
-					</div>
-					<div class="col-md-3 qna-write">
-                  		<a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디만들기</a>
-              		</div>
-				{{/sessionedUser}}	
+					</div>  -->	
+				<article>
+						<h3> <span class="note" style="font-family:Courier New;"> Welcome, {{name}} </span> 
+							<a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디만들기</a>
+						  </h3>
+						
+				</article>
+				<!-- <div class="col-md-3 qna-write">
+                  	<a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디만들기</a>
+              	</div> -->
+              			
+              	 <
+              	{{/sessionedUser}}	
 				
 			</div>
 		</div>
+		
       
           <ul class="list">
           	  {{#questions}}
@@ -93,13 +104,13 @@
                       <li><a href="#">2</a></li>
                       <li><a href="#">3</a></li>
                       <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
+                    <!-- <li><a href="#">5</a></li>  -->  
                       <li><a href="#">»</a></li>
                 </ul>
               </div>
-              <div class="col-md-3 qna-write">
+             <div class="col-md-3 qna-write">
                   <a href="/questions/form" class="btn btn-primary pull-right" role="button">질문하기</a>
-              </div>
+              </div>   
           </div>
         </div>
     </div>
