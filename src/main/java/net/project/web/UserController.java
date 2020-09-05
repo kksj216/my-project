@@ -70,15 +70,15 @@ public class UserController {
 		
 		//users.add(user);
 		userRepository.save(user);
-//		return "redirect:/users";
-		return "/index";
+		//return "redirect:/users";
+		return "redirect:/index";
 	}
 	
 	@GetMapping("") // "/users
 	public String list(Model model) {
 		model.addAttribute("users", userRepository.findAll()); 
 		//return "/user/list";
-		return "/index";
+		return "redirect:/index";
 	}
 	
 	@GetMapping("/{id}/form")
