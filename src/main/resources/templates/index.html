@@ -17,11 +17,11 @@
 
 <style>
 .info {
-  background-color: tomato;
+  /*background-color: tomato;*/
   color: white;
-  border: 2px solid black;
+ /* border: 2px solid black;*/
   margin: 5px;
-  padding: 80px;
+  padding: 40px;
   width: inherit;
   
 }
@@ -45,19 +45,26 @@
       
       	<div class=info>
 			<div>
+			<div style="align:middle;">
+				<style>
+					img {display:block; margin:0px auto; } 
+				</style>
+				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbPeo3G%2FbtqH50wBSzk%2FB66nNfnqxOUUiVc54m7D91%2Fimg.png" alt="handong study" float=auto, height="300px", width="670px">
+				
+			
 				{{^sessionedUser}}
 					<h2> <span class="note"> 로그인을 해주세요 :) </span>  </h2>
 				{{/sessionedUser}}	
 				{{#sessionedUser}}
-					<div>
+					<!-- <div>
 						<img src="https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png" class="article-author-thumb" alt="">
-					</div> 
+					</div>  -->
 					<div>
-						<h3> <span class="note"> 안녕하세요 {{name}}님, 오늘도 좋은하루 되세요! ^0^ </span>  </h3>
+						<h3> <span class="note"> 안녕하세요 {{name}}님, 오늘도 좋은하루 되세요:) </span>  </h3>
 					</div>
-					<div class="col-md-3 qna-write">
+				<!-- 	<div class="col-md-3 qna-write">
                   		<a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디만들기</a>
-              		</div>
+              		</div>  -->
 				{{/sessionedUser}}	
 				
 			</div>
@@ -99,7 +106,7 @@
                 </ul>
               </div>
               <div class="col-md-3 qna-write">
-                  <a href="/questions/form" class="btn btn-primary pull-right" role="button">질문하기</a>
+                  <a href="/questions/form" class="btn btn-primary pull-right" role="button">스터디 만들기</a>
               </div>
           </div>
         </div>
